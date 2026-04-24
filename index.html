@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chăm sóc bé yêu 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ffd6e0, #ffe6f0);
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #ff4d6d;
+    }
+    button {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #e63950;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>💖 Nhắc nhở bé yêu của anh 💖</h1>
+    <p>Em đang bị ốm, anh thương bé lắm 🥺</p>
+
+    <button onclick="showNextMessage()">Nhấn vào đây 💌</button>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    const messages = [
+      "Nhớ uống nước ấm nha bé 🥺",
+      "Đừng thức khuya nữa, ngủ sớm đi 😴",
+      "Giữ ấm cổ họng nha 🧣",
+      "Ăn cháo hoặc đồ nhẹ thôi nha 🍲",
+      "Anh luôn ở đây nè 💖",
+      "Anh yêu bé nhiều lắm 💖",
+      "Không biết bé đọc mail của anh chưa nữa"
+    ];
+
+    let currentIndex = 0;
+
+    function showNextMessage() {
+      document.getElementById("message").innerText = messages[currentIndex];
+      currentIndex = (currentIndex + 1) % messages.length;
+    }
+
+    // Tự động chuyển mỗi 10 giây theo thứ tự
+    setInterval(() => {
+      showNextMessage();
+    }, 3000);
+  </script>
+
+</body>
+</html>
